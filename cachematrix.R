@@ -1,7 +1,6 @@
 ## makeCacheMatrix - getter setter functions for the getting and setting Matrix
 ## and Inverse Matrix
 ## 
-## 
 
 makeCacheMatrix <- function(mat = matrix()) {
   invMat <- NULL
@@ -26,13 +25,14 @@ makeCacheMatrix <- function(mat = matrix()) {
 }
 
 
-## cacheSolve - Computes, caches, and returns new matrix inverse 
+## cacheSolve - Computes, caches, and returns  matrix inverse if a new matrix is presented
+## or else, returns cached inverse of Matrix
 
 cacheSolve <- function(x, ...) {
   invMat <- x$getMatrixInverse()
   if(!is.null(invMat)) {
     message("getting cached data")
-    return(invMat) ## Return cached Matrix
+    return(invMat) ## Return cached Matrix Inverse
   }
   ## get the matrix and calculate its Inverse
   data <- x$get() 
